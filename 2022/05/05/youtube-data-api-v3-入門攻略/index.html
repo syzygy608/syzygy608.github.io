@@ -1,0 +1,188 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>youtube data api v3 入門攻略 | 洛</title><meta name="keywords" content="教學"><meta name="author" content="D1stance"><meta name="copyright" content="D1stance"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="Update! 特別說明 [WARNING]如果你已經遇到圖下類似的錯誤，代表你需要重創一個project，然後依照本說明操作，否則基本上目前無解，不然你會跟某雪魚一樣撞了三小時😭。 補充說明，圖不夠清楚可以右鍵 &gt; 在新分頁開啟影像。   前置作業首先你需要有任意一隻google帳號，並且最好先去建立一個youtube頻道，猜測會有人用新的帳號來做project，可能會因為沒有頻道會以為">
+<meta property="og:type" content="article">
+<meta property="og:title" content="youtube data api v3 入門攻略">
+<meta property="og:url" content="https://syzygy608.github.io/2022/05/05/youtube-data-api-v3-%E5%85%A5%E9%96%80%E6%94%BB%E7%95%A5/index.html">
+<meta property="og:site_name" content="洛">
+<meta property="og:description" content="Update! 特別說明 [WARNING]如果你已經遇到圖下類似的錯誤，代表你需要重創一個project，然後依照本說明操作，否則基本上目前無解，不然你會跟某雪魚一樣撞了三小時😭。 補充說明，圖不夠清楚可以右鍵 &gt; 在新分頁開啟影像。   前置作業首先你需要有任意一隻google帳號，並且最好先去建立一個youtube頻道，猜測會有人用新的帳號來做project，可能會因為沒有頻道會以為">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://www.youtube.com/img/desktop/yt_1200.png">
+<meta property="article:published_time" content="2022-05-05T12:44:15.000Z">
+<meta property="article:modified_time" content="2022-05-05T12:58:17.706Z">
+<meta property="article:author" content="D1stance">
+<meta property="article:tag" content="教學">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.youtube.com/img/desktop/yt_1200.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://syzygy608.github.io/2022/05/05/youtube-data-api-v3-%E5%85%A5%E9%96%80%E6%94%BB%E7%95%A5/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支援'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '剛剛',
+    min: '分鐘前',
+    hour: '小時前',
+    day: '天前',
+    month: '個月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切換為繁體","cht_to_chs":"你已切換為簡體","day_to_night":"你已切換為深色模式","night_to_day":"你已切換為淺色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'youtube data api v3 入門攻略',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-05-05 20:58:17'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">載入中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.imgur.com/Tgn3Ysk.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">2</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://www.youtube.com/img/desktop/yt_1200.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">洛</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">youtube data api v3 入門攻略</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">發表於</span><time class="post-meta-date-created" datetime="2022-05-05T12:44:15.000Z" title="發表於 2022-05-05 20:44:15">2022-05-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新於</span><time class="post-meta-date-updated" datetime="2022-05-05T12:58:17.706Z" title="更新於 2022-05-05 20:58:17">2022-05-05</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%A8%8B%E5%BC%8F/">程式</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="Update-特別說明"><a href="#Update-特別說明" class="headerlink" title="Update! 特別說明"></a>Update! 特別說明</h2><blockquote>
+<p>[WARNING]<br>如果你已經遇到圖下類似的錯誤，代表<strong>你需要重創一個project</strong>，<br>然後依照本說明操作，否則基本上目前無解，不然你會跟某雪魚一樣撞了三小時😭。</p>
+<p>補充說明，圖不夠清楚可以右鍵 &gt; 在新分頁開啟影像。</p>
+</blockquote>
+<p><img src="https://i.imgur.com/kqltY3y.png"></p>
+<h2 id="前置作業"><a href="#前置作業" class="headerlink" title="前置作業"></a>前置作業</h2><p>首先你需要有任意一隻google帳號，並且最好先去建立一個youtube頻道，猜測會有人用新的帳號來做project，可能會因為沒有頻道會以為是程式寫錯或發生什麼問題。</p>
+<p>然後進入到 <a target="_blank" rel="noopener" href="https://console.cloud.google.com/">Google Cloud Platform 網站</a>，<br>第一次使用的人應該會看到這個畫面</p>
+<p><img src="https://i.imgur.com/GX0uPAk.png"><br>該填的都完成後來到這裡</p>
+<p><img src="https://i.imgur.com/2y1eZNu.png"><br>點選選取專案 &gt; 新增專案</p>
+<p><img src="https://i.imgur.com/6uk1kHq.png"><br>隨便取名字後建立專案</p>
+<p><img src="https://i.imgur.com/rsJ3VCo.png"><br>建立好後點選右上角的鈴鐺，選取專案來進入你建立好的專案</p>
+<p><img src="https://i.imgur.com/nq8uyRm.png"><br>按下左上角的hambuger bar(三根橫線)，選擇已啟用的API和服務</p>
+<p><img src="https://i.imgur.com/u9rGJzc.png"><br>選擇啟用API和服務</p>
+<p><img src="https://i.imgur.com/DKl46p3.png"><br>搜尋youtube data api v3</p>
+<p><img src="https://i.imgur.com/i0BnoPH.png"><br>點擊youtube data api v3進入下個頁面後選擇啟用，啟用完成後進行下一步</p>
+<p><img src="https://i.imgur.com/J0jvqIs.png"><br>點選OAUTH同意畫面，User Type 點擊外部，建立</p>
+<p><img src="https://i.imgur.com/tBKdPzJ.png"><br>共有三個欄位為*必填的地方，就填寫任意專案名稱跟你的信箱</p>
+<p><img src="https://i.imgur.com/M8r4gxD.png"></p>
+<blockquote>
+<p>[DANGER]<br>極度重要，必須在測試使用者這裡，點選ADD USERS輸入自己的信箱後按新增，否則之後你在跑Python程式時會錯誤到懷疑人生。<strong>感謝郭電神提供此重要信息</strong></p>
+</blockquote>
+<p>然後接下來基本上就是一直繼續就好，到摘要之後進到下一步</p>
+<p><img src="https://i.imgur.com/IBkYeMk.png"><br>創一個API金鑰(不用複製東西)</p>
+<p><img src="https://i.imgur.com/JZ0A2lk.png"><br>再創立一個OAUTH用戶端ID，選擇電腦版應用程式，任意取名</p>
+<p><img src="https://i.imgur.com/HuERFVX.png"><br>你會看到妳的用戶端ID跟用戶端密碼，把.json檔載下來<br>檔名應該會是 “client_secret_xxxxxxxxxx.json”，請把它命名你喜歡的模樣，等下會用到</p>
+<h2 id="測試API"><a href="#測試API" class="headerlink" title="測試API"></a>測試API</h2><p>為了使用Youtube API，請使用terminal輸入<br><code>pip install --upgrade google-api-python-client</code><br><code>pip install --upgrade google-auth-oauthlib google-auth-httplib2</code><br>預先裝好以上兩個模組</p>
+<p>範例程式</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> google_auth_oauthlib.flow</span><br><span class="line"><span class="keyword">import</span> googleapiclient.discovery</span><br><span class="line"><span class="keyword">import</span> googleapiclient.errors</span><br><span class="line"></span><br><span class="line">scopes = [<span class="string">&quot;https://www.googleapis.com/auth/youtube.force-ssl&quot;</span>]</span><br><span class="line"></span><br><span class="line">os.environ[<span class="string">&quot;OAUTHLIB_INSECURE_TRANSPORT&quot;</span>] = <span class="string">&quot;1&quot;</span></span><br><span class="line"></span><br><span class="line">api_service_name = <span class="string">&quot;youtube&quot;</span></span><br><span class="line">api_version = <span class="string">&quot;v3&quot;</span></span><br><span class="line">client_secrets_file = <span class="string">&quot;client_secret.json&quot;</span></span><br><span class="line">flow = google_auth_oauthlib.flow.InstalledAppFlow.from_client_secrets_file(client_secrets_file, scopes)</span><br><span class="line"></span><br><span class="line">credentials = flow.run_console()</span><br><span class="line">youtube = googleapiclient.discovery.build(api_service_name, api_version, credentials=credentials)</span><br><span class="line"></span><br><span class="line">request = youtube.channels().<span class="built_in">list</span>(</span><br><span class="line">    part = <span class="string">&quot;statistics&quot;</span>,</span><br><span class="line">    <span class="built_in">id</span> = <span class="string">&quot;UCFahBR2wixu0xOex84bXFvg&quot;</span></span><br><span class="line">)</span><br><span class="line">response = request.execute()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(response)</span><br></pre></td></tr></table></figure>
+<p>記得把剛才下載的.json檔跟.py檔放在同一個資料夾下，<br>把上方的變數</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">client_secrets_file = <span class="string">&quot;這裡放你的檔案名稱&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>運行python檔案後會看到下列結果<br><img src="https://i.imgur.com/x621slT.png"><br>點選那個網址後登入你的帳號，會看到下方這個畫面<br><img src="https://i.imgur.com/wYnSzLQ.png"><br>選擇兩次繼續，就會得到授權碼如示意圖<br><img src="https://i.imgur.com/VyJ8OUm.jpg"><br>貼在剛才的Python就大功告成，之後每次運行python的程式需要重複類似的動作進行登入驗證。<br><img src="https://i.imgur.com/U38XHz2.png"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://syzygy608.github.io">D1stance</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章連結: </span><span class="post-copyright-info"><a href="https://syzygy608.github.io/2022/05/05/youtube-data-api-v3-%E5%85%A5%E9%96%80%E6%94%BB%E7%95%A5/">https://syzygy608.github.io/2022/05/05/youtube-data-api-v3-%E5%85%A5%E9%96%80%E6%94%BB%E7%95%A5/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版權聲明: </span><span class="post-copyright-info">本部落格所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 許可協議。轉載請註明來自 <a href="https://syzygy608.github.io" target="_blank">洛</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%99%E5%AD%B8/">教學</a></div><div class="post_share"><div class="social-share" data-image="https://www.youtube.com/img/desktop/yt_1200.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2022/05/05/%E5%A4%8F%E6%97%A5/"><img class="prev-cover" src="https://i.imgur.com/oGOG6cs.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">夏日</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.imgur.com/Tgn3Ysk.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">D1stance</div><div class="author-info__description">程式和文學都是組成世界的齒輪</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/syzygy608"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/syzygy608/" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">洛嵐天下</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目錄</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Update-%E7%89%B9%E5%88%A5%E8%AA%AA%E6%98%8E"><span class="toc-number">1.</span> <span class="toc-text">Update! 特別說明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE%E4%BD%9C%E6%A5%AD"><span class="toc-number">2.</span> <span class="toc-text">前置作業</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%AC%E8%A9%A6API"><span class="toc-number">3.</span> <span class="toc-text">測試API</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/05/05/%E5%A4%8F%E6%97%A5/" title="夏日"><img src="https://i.imgur.com/oGOG6cs.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="夏日"/></a><div class="content"><a class="title" href="/2022/05/05/%E5%A4%8F%E6%97%A5/" title="夏日">夏日</a><time datetime="2022-05-05T13:00:04.000Z" title="發表於 2022-05-05 21:00:04">2022-05-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/05/youtube-data-api-v3-%E5%85%A5%E9%96%80%E6%94%BB%E7%95%A5/" title="youtube data api v3 入門攻略"><img src="https://www.youtube.com/img/desktop/yt_1200.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="youtube data api v3 入門攻略"/></a><div class="content"><a class="title" href="/2022/05/05/youtube-data-api-v3-%E5%85%A5%E9%96%80%E6%94%BB%E7%95%A5/" title="youtube data api v3 入門攻略">youtube data api v3 入門攻略</a><time datetime="2022-05-05T12:44:15.000Z" title="發表於 2022-05-05 20:44:15">2022-05-05</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By D1stance</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主題 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="閱讀模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="淺色和深色模式轉換"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="單欄和雙欄切換"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="設定"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目錄"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到頂部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script></div></body></html>
