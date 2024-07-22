@@ -1,0 +1,251 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>2024-07-21 團練紀錄 | 洛 Blog</title><meta name="keywords" content="ICPC"><meta name="author" content="D1stance"><meta name="copyright" content="D1stance"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="資訊 2016-2017 ACM-ICPC Pacific Northwest Regional Contest (Div. 1) Solved: 9&#x2F;12 Rank: 1st  賽中通過: O, 賽後補題: #     A B C D E F G H I J K L     O O O   O O O O O O     開賽的時候先看了 pA，發現是字元版本的 LIS， 送出後得到 1WA，簡">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2024-07-21 團練紀錄">
+<meta property="og:url" content="https://syzygy608.github.io/2024/07/22/2024-07-21%E5%9C%98%E7%B7%B4%E7%B4%80%E9%8C%84/index.html">
+<meta property="og:site_name" content="洛 Blog">
+<meta property="og:description" content="資訊 2016-2017 ACM-ICPC Pacific Northwest Regional Contest (Div. 1) Solved: 9&#x2F;12 Rank: 1st  賽中通過: O, 賽後補題: #     A B C D E F G H I J K L     O O O   O O O O O O     開賽的時候先看了 pA，發現是字元版本的 LIS， 送出後得到 1WA，簡">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/new_dyn/78e064215b802bb5ec9949c9d3d322d549047619.png">
+<meta property="article:published_time" content="2024-07-22T02:20:00.000Z">
+<meta property="article:modified_time" content="2024-07-22T03:07:51.635Z">
+<meta property="article:author" content="D1stance">
+<meta property="article:tag" content="ICPC">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i0.hdslb.com/bfs/new_dyn/78e064215b802bb5ec9949c9d3d322d549047619.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://syzygy608.github.io/2024/07/22/2024-07-21%E5%9C%98%E7%B7%B4%E7%B4%80%E9%8C%84/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支援'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '剛剛',
+    min: '分鐘前',
+    hour: '小時前',
+    day: '天前',
+    month: '個月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切換為繁體","cht_to_chs":"你已切換為簡體","day_to_night":"你已切換為深色模式","night_to_day":"你已切換為淺色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '2024-07-21 團練紀錄',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-07-22 11:07:51'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">載入中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.imgur.com/glGoytd.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">4</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i0.hdslb.com/bfs/new_dyn/78e064215b802bb5ec9949c9d3d322d549047619.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">洛 Blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">2024-07-21 團練紀錄</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">發表於</span><time class="post-meta-date-created" datetime="2024-07-22T02:20:00.000Z" title="發表於 2024-07-22 10:20:00">2024-07-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新於</span><time class="post-meta-date-updated" datetime="2024-07-22T03:07:51.635Z" title="更新於 2024-07-22 11:07:51">2024-07-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AB%B6%E7%A8%8B/">競程</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="資訊">資訊</h2>
+<p><a target="_blank" rel="noopener" href="https://codeforces.com/gym/101201">2016-2017 ACM-ICPC Pacific Northwest Regional Contest (Div. 1)</a></p>
+<p>Solved: 9/12</p>
+<p>Rank: 1st</p>
+<ul>
+<li>賽中通過: O, 賽後補題: #</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+<th>F</th>
+<th>G</th>
+<th>H</th>
+<th>I</th>
+<th>J</th>
+<th>K</th>
+<th>L</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td></td>
+<td></td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>開賽的時候先看了 pA，發現是字元版本的 LIS，<br>
+送出後得到 1WA，簡單測試後發現如果字串內沒有全部字母都出現的話會取錯，<br>
+修改後送出 AC。</p>
+<h3 id="A-solved-at-00-04-with-1WA">A solved at 00:04 with 1WA</h3>
+<p>看了下 pB，感覺是麻煩的分層圖 01-BFS，<br>
+但是因為有點複雜，所以先放著。</p>
+<p>看了下比較多人寫的 pC，第一直覺是二分搜加上貪心滑窗檢查，<br>
+但試想了一下覺得貪心滑窗檢查的部分其實每次都塞最後面應該就是最佳解，所以透過 BIT 來維護，直接 Greedy 即可。</p>
+<h3 id="C-solved-at-00-24">C solved at 00:24</h3>
+<p>下題看的是 pH，第一眼感覺跟最多不相交區間有關，<br>
+但是他希望取到的區間能覆蓋最多的點，<br>
+所以發現其實是帶權值的最多不相交區間，<br>
+所以使用 DP 搭配二分搜即可。</p>
+<h3 id="H-solved-at-00-36">H solved at 00:36</h3>
+<p>當時因為我們已經從那時開始一路領先，<br>
+所以沒有人可以跟，於是我就先跟隊友錢學長一起討論 pI，<br>
+這是一個郵差送信的問題，每次只能載最多 $k$ 封信，<br>
+問你最少走多少距離可以把信送完，</p>
+<p>花了一些時間討論和觀察，覺得越遠的信越應該先送，<br>
+所以就排序後稍微貪心模擬即可。</p>
+<h3 id="I-solved-at-01-11">I solved at 01:11</h3>
+<p>下議題看的是 pJ，要在區間內找到第一個買得起的物品，<br>
+然後就買它，接著再找下一個買得起的物品，<br>
+直到區間內沒有任何買得起的物品，<br>
+我第一直覺覺得跟 CSES 上的 <a target="_blank" rel="noopener" href="https://cses.fi/problemset/task/1144">Hotel Queries</a> 很像，<br>
+只是這題多了區間的限制，稍微分析一下覺得買物品的時候應該不會買很多次，<br>
+所以一樣先蓋出一個區間最小值的線段樹，<br>
+然後在線段樹上二分搜即可。</p>
+<p>但是在送出的時候得到一個 WA，發現是如果左子節點已經有買得起的物品，不應該再往右走，即使右子節點有更便宜的物品，因為它會在區間找到第一個買得起的物品就買，所以修正後送出 AC。</p>
+<h3 id="J-solved-at-01-52-with-1WA">J solved at 01:52 with 1WA</h3>
+<p>接下來比較能解的應該是 pF 跟 pK，<br>
+我先去著手 pF，這是一個 2-SAT 問題，<br>
+每個檯燈只能照亮 row 或 column，<br>
+一開始我們沒有看到題目最後一句話，<br>
+以為兩個燈的照亮情況呈現正方形也會有衝突，<br>
+所以花了一些時間在這邊，在花時間思考的時候，錢學長已經解出 pK 了。</p>
+<h3 id="K-solved-at-02-48">K solved at 02:48</h3>
+<p>後來發現其實只要 row 或 column 不要有兩個燈照亮即可，<br>
+所以我就先把 2-SAT 的部分寫好，<br>
+但是我不太熟悉 2-SAT 實際上怎麼處理 expression，<br>
+所以交給錢學長寫，我把編號跟其他部分寫好，<br>
+錢學長幫忙建好圖後，就送出 AC。</p>
+<h3 id="F-solved-at-03-31-with-3WA">F solved at 03:31 with 3WA</h3>
+<p>剩下看起來只有 pB 跟 pG 比較有可能解出來，<br>
+我覺得 pB 看起來錯誤的機會比較低，所以跟錢學長一起做 pB，<br>
+本來學長想用 Dijkstra 來解，但是我覺得這題因為只有修改的時候才會有新增權重，所以只要用 Deque 來維護即可，最後我看著學長寫，然後一起討論，最後送出 AC。</p>
+<h3 id="B-solved-at-04-17">B solved at 04:17</h3>
+<p>最後剩下 pG，首先可以發現它數據範圍很小，<br>
+然後又要在雲朵的區塊盡量切出最多不連通的區塊，<br>
+所以可以感受出要在一個相間的格子圖上找到最多不連通的區塊，<br>
+因此我和錢學長一起討論，最後認定這是一個二分圖最大獨立集問題，<br>
+所以只要把雲朵的區塊當作一個二分圖的點，<br>
+然後透過匈牙利算法算出最大匹配，最後用點數減去最大匹配即可。</p>
+<h3 id="G-solved-at-04-41">G solved at 04:41</h3>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://syzygy608.github.io">D1stance</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章連結: </span><span class="post-copyright-info"><a href="https://syzygy608.github.io/2024/07/22/2024-07-21%E5%9C%98%E7%B7%B4%E7%B4%80%E9%8C%84/">https://syzygy608.github.io/2024/07/22/2024-07-21%E5%9C%98%E7%B7%B4%E7%B4%80%E9%8C%84/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版權聲明: </span><span class="post-copyright-info">本部落格所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 許可協議。轉載請註明來自 <a href="https://syzygy608.github.io" target="_blank">洛 Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/ICPC/">ICPC</a></div><div class="post_share"><div class="social-share" data-image="https://i0.hdslb.com/bfs/new_dyn/78e064215b802bb5ec9949c9d3d322d549047619.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/05/05/%E9%97%9C%E6%96%BC%E6%88%91/"><img class="next-cover" src="https://i.imgur.com/oGOG6cs.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">關於我</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.imgur.com/glGoytd.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">D1stance</div><div class="author-info__description">程式和文學都是組成世界的齒輪</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/syzygy608"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/syzygy608/" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">歡迎來到我的blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目錄</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B3%87%E8%A8%8A"><span class="toc-number">1.</span> <span class="toc-text">資訊</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-solved-at-00-04-with-1WA"><span class="toc-number">1.1.</span> <span class="toc-text">A solved at 00:04 with 1WA</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-solved-at-00-24"><span class="toc-number">1.2.</span> <span class="toc-text">C solved at 00:24</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#H-solved-at-00-36"><span class="toc-number">1.3.</span> <span class="toc-text">H solved at 00:36</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#I-solved-at-01-11"><span class="toc-number">1.4.</span> <span class="toc-text">I solved at 01:11</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#J-solved-at-01-52-with-1WA"><span class="toc-number">1.5.</span> <span class="toc-text">J solved at 01:52 with 1WA</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#K-solved-at-02-48"><span class="toc-number">1.6.</span> <span class="toc-text">K solved at 02:48</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#F-solved-at-03-31-with-3WA"><span class="toc-number">1.7.</span> <span class="toc-text">F solved at 03:31 with 3WA</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B-solved-at-04-17"><span class="toc-number">1.8.</span> <span class="toc-text">B solved at 04:17</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#G-solved-at-04-41"><span class="toc-number">1.9.</span> <span class="toc-text">G solved at 04:41</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/07/22/2024-07-21%E5%9C%98%E7%B7%B4%E7%B4%80%E9%8C%84/" title="2024-07-21 團練紀錄"><img src="https://i0.hdslb.com/bfs/new_dyn/78e064215b802bb5ec9949c9d3d322d549047619.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2024-07-21 團練紀錄"/></a><div class="content"><a class="title" href="/2024/07/22/2024-07-21%E5%9C%98%E7%B7%B4%E7%B4%80%E9%8C%84/" title="2024-07-21 團練紀錄">2024-07-21 團練紀錄</a><time datetime="2024-07-22T02:20:00.000Z" title="發表於 2024-07-22 10:20:00">2024-07-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/05/%E9%97%9C%E6%96%BC%E6%88%91/" title="關於我"><img src="https://i.imgur.com/oGOG6cs.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="關於我"/></a><div class="content"><a class="title" href="/2022/05/05/%E9%97%9C%E6%96%BC%E6%88%91/" title="關於我">關於我</a><time datetime="2022-05-05T13:43:25.000Z" title="發表於 2022-05-05 21:43:25">2022-05-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/05/%E5%A4%8F%E6%97%A5/" title="夏日"><img src="https://i.imgur.com/oGOG6cs.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="夏日"/></a><div class="content"><a class="title" href="/2022/05/05/%E5%A4%8F%E6%97%A5/" title="夏日">夏日</a><time datetime="2022-05-05T13:00:04.000Z" title="發表於 2022-05-05 21:00:04">2022-05-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/05/youtube-data-api-v3-%E5%85%A5%E9%96%80%E6%94%BB%E7%95%A5/" title="youtube data api v3 入門攻略"><img src="https://www.youtube.com/img/desktop/yt_1200.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="youtube data api v3 入門攻略"/></a><div class="content"><a class="title" href="/2022/05/05/youtube-data-api-v3-%E5%85%A5%E9%96%80%E6%94%BB%E7%95%A5/" title="youtube data api v3 入門攻略">youtube data api v3 入門攻略</a><time datetime="2022-05-05T12:44:15.000Z" title="發表於 2022-05-05 20:44:15">2022-05-05</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By D1stance</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主題 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="閱讀模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="淺色和深色模式轉換"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="單欄和雙欄切換"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="設定"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目錄"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到頂部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script></div></body></html>
